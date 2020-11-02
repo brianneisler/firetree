@@ -6,7 +6,8 @@ const pack = require('../package.json')
 
 program
   .version(pack.version)
-  // .command('command', 'command description')
+  .command('generate', 'generate Firebase Firestor rules from an AST')
+  .command('parse', 'parse Firebase Firestore rules into an AST')
   .parse(process.argv)
 
 if (!program.args.length) {

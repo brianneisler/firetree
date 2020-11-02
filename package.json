@@ -1,19 +1,19 @@
 {
-  "name": "[project-name]",
-  "version": "0.0.1",
-  "description": "[project-description]",
+  "name": "firetree",
+  "version": "0.1.0",
+  "description": "AST parser and generator for Firebase Firestore and Storage security rules",
   "author": "Brian Neisler <hello@brianneisler.com>",
   "license": "Apache-2.0",
-  "homepage": "[project-homepage]",
+  "homepage": "https://firetree.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/brianneisler/[project-name].git"
+    "url": "https://github.com/brianneisler/firetree.git"
   },
   "bugs": {
-    "url": "https://github.com/brianneisler/[project-name]/issues"
+    "url": "https://github.com/brianneisler/firetree/issues"
   },
   "bin": {
-    "[project-name]": "./bin/[project-name]"
+    "firetree": "./bin/firetree"
   },
   "main": "./index.js",
   "module": "./index.module.js",
@@ -23,7 +23,6 @@
     "./constants": "./src/constants/index.js",
     "./context": "./src/context/index.js",
     "./generator": "./src/generator/index.js",
-    "./minimizer": "./src/minimizer/index.js",
     "./parser": "./src/parser/index.js",
     "./token": "./src/token/index.js",
     "./utils": "./src/utils/index.js",
@@ -91,10 +90,11 @@
     "lint:staged"
   ],
   "keywords": [
+    "ast",
     "firebase",
     "firestore",
-    "minifier",
-    "minimizer",
+    "generator",
+    "parser",
     "rules",
     "security"
   ]

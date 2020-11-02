@@ -19,8 +19,8 @@ The following outlines the commands for common development tasks.
 To setup the project for development run the below commands. After these have been run you will be able to use the project else where, run tests, etc.
 
 ```sh
-git clone https://github.com/brianneisler/[project-name].git
-cd [project-name]
+git clone https://github.com/brianneisler/firetree.git
+cd firetree
 nvm install
 nvm use
 npm run setup

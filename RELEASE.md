@@ -1,10 +1,10 @@
 # Release
 
-This guide is a simple instruction set for releasing a new version of `[project-name]`
+This guide is a simple instruction set for releasing a new version of `firetree`
 
 
 ## Notes
-- We use git tags for releasing `[project-name]` through Travis.
+- We use git tags for releasing `firetree` through Travis.
 
 ## Instructions
 - Make sure your local master is up to date with latest commits.

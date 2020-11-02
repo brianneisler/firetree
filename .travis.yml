@@ -1,4 +1,5 @@
 language: node_js
+
 sudo: false
 
 node_js:
@@ -22,8 +23,8 @@ stages:
 - lint
 - test
 - name: deploy
-  if: tag=~^v AND repo=brianneisler/[project-name]
-
+  if: tag=~^v AND repo=brianneisler/firetree
+  
 jobs:
   include:
   - stage: audit
@@ -45,7 +46,6 @@ jobs:
       api_key: "$NPM_TOKEN"
       on:
         tags: true
-
 env:
   global:
-    secure: Xo7UinKqo0N68mQwo7mKceh0b51HBLMgSneG4avWuTrOPoo6MUQJE2VWaBF3eE3O74mPR1Fj/slpyPkiHwPDMU1AA+bqHUN0kTrsAikhEzqSYW8PWMwkBGtEYuxmUpY2Y/3aFnZ4IFMNeqYhkBq7n/66sWoIO7ue52mW1XjwIx+UEAGQEj62GKpZ4Y4LhmyMqTaZoxUPNhjXx0wshOO5lwxqFy/hUoOS+Taxt/aKk+jfSyzLcUedP73mY+gFh/0m0GBQBNCprwY6lt0gsy2K8hazcesitCBifCfz7BVK27j1pci3XUp83mvCXAHG0eC/F1mQzCVlsCyV0ighUhNvMjBsUsM5EpvKOVzQiGfjyVBX8gveWnBlXl7/m0AMjDNJ8dmQLu3sIlpRv4pi9toqXV8NVMDQgRANpa3k1XvvXbvQtXCWUIlJ/DMptl04KlFOJSDswYCenqZ58M9+aqdzDz+RBP22/onatkF0TcZ28Dtix7bhOX08VLQ2HPXgZ0Wq/EyvJhM2GdLSzNTOX6vPmugBhdruuzLmwJENHjs7WdK4bUhjfTJZTnDi7XE2Du2ctlTvlEcsUtU1+qQGIRUZhXgQ8GsE56tpYcOld8wbxaTELDm/OPuBC6MP192RRmw3WwW8vJiOTjYs3kCO1hcfQ3VqU0TDlOUJFet3HBjYz5o=
+    secure: VZE41qiIaPm7KExK1DPoeWIiyP/IqeeMSISaR5ZnC6MTXIpU9EsLYFrn30uGo2OlPrKpw4jW717lyLEUDLJye4Cky5zzrgTzDEJaW1Y2ROoIZhG/P8NGXWS1qsCcVx4wop7IsxN1aeNIHR9szLIPkrN2DGOUm6y82lfZG27aLHyCtt8SqUZUek/c0aVf3kAzI2Q4FkQd4s7EDJW2YPBlTeX6otvnPAeeWshJyVUPn0vn1c9LAvClLRLV/bOhe2eoAQMzVjMerDsvBN58Gmrw8g3qXyU8yRPr6OyOopREHajbw5B3jYwmQ/c/Q7JpEF6ZcKM6NGK4M8hLlRViaH82PhItzUZ+74a5FT4HOHzF9gb8xM/eYJsFbF0PjhvE8AR1rkwHBpE/Bw96uOXLOJ8Qstbjn1H9VqdQwQWLg8qtzPobIx5eqXJiTGbdMyQI7Gw0nDS4TNwsrY3UOYdFLRL0izXOZgx3Pp6L4I7W2PLPOxJZb0mak/pGY2TFetsrR8m9LzDmGJQr1i2EsKpBdwNOgeFD0I85dxgELu5jvGmy9+Gul/zuK1JByYLTmcONyoYTKTgIKJlJcXojuC6UQLN9ShboQ/qmphBiBOJlEVjkWBghV3aY5pUJ54lwB8Z+icrfQ7oa5CPc3/eSGqanMkiI+yZYJRqYq1hR1BQD5DG56LE=
