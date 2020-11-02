@@ -17,7 +17,7 @@
 
 ### function setupContext()
 
-[source](https://github.com/brianneisler/firetree.git/tree/v0.0.1/src/context/setupContext.js#L74)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
+[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/context/setupContext.js#L74)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
 <p>Sets up the Context object for use by the parser and generator</p>
 
 **Params**
@@ -36,7 +36,7 @@ const contxt = setupContext()
 
 ### function generate()
 
-[source](https://github.com/brianneisler/firetree.git/tree/v0.0.1/src/generator/generate.js#L4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
+[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/generator/generate.js#L4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
 <p>Generates a rules file from the given <code>ast</code> or <code>tokenList</code> and outputs the<br />
 rules to the given <code>outpitFilePath</code>. If no <code>outputFilePath</code> is given, a<br />
 string is returned.</p>
@@ -75,7 +75,7 @@ const ast = await generate(context, {
 
 ### function parse()
 
-[source](https://github.com/brianneisler/firetree.git/tree/v0.0.1/src/parser/parse.js#L4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
+[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/parser/parse.js#L4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
 <p>parses the rules file at the given <code>filePath</code> or parse the given <code>string</code>.</p>
 
 **Params**
@@ -110,7 +110,7 @@ const ast = await parse(context, {
 
 ### **private** function cacheChain()
 
-[source](https://github.com/brianneisler/firetree.git/tree/v0.0.1/src/utils/cacheChain.js#L42)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
+[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/utils/cacheChain.js#L42)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
 <p>This method generates a specific object instance for use in a WeakMap cache.<br />
 The object instance is unique based upon the parameters that are passed to<br />
 the this method.</p>
@@ -134,7 +134,7 @@ cache chains connected to the object will automatically be removed from the cach
 
 ### **private** function functionDefineLength()
 
-[source](https://github.com/brianneisler/firetree.git/tree/v0.0.1/src/utils/functionDefineLength.js#L55)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
+[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/utils/functionDefineLength.js#L55)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
 <p>Defines <code>length</code> for the given <code>func</code></p>
 <p>Note: This mutates <code>func</code></p>
 
