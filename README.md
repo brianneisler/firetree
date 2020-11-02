@@ -6,7 +6,7 @@ AST parser and generator for Firebase Firestore and Storage security rules
 [![license](https://img.shields.io/npm/l/moltres.svg)](https://github.com/brianneisler/moltres/blob/master/LICENSE)
 [![npm version](https://badge.fury.io/js/firetree.svg)](https://badge.fury.io/js/firetree)<br />
 [![Build Status](https://travis-ci.com/brianneisler/firetree.svg)](https://travis-ci.com/brianneisler/firetree)<br />
-[![Code coverage](https://codecov.io/gh/brianneisler/firetree/branch/master/graph/badge.svg)](https://codecov.io/gh/brianneisler/firetree/branch/master/)<br />
+[![Code coverage](https://codecov.io/gh/brianneisler/firetree/branch/main/graph/badge.svg)](https://codecov.io/gh/brianneisler/firetree/branch/main/)<br />
 [![NPM](https://nodei.co/npm/firetree.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/firetree/)
 
 ## Documentation
