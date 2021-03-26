@@ -5,11 +5,7 @@ import UnaryMinusOperator from '../nodes/UnaryMinusOperator'
 import UnaryPlusOperator from '../nodes/UnaryPlusOperator'
 import { identifyNextNode } from '../util'
 
-const UNARY_OPERATOR_IDENTIFIERS = [
-  LogicalNotOperator,
-  UnaryMinusOperator,
-  UnaryPlusOperator
-]
+const UNARY_OPERATOR_IDENTIFIERS = [LogicalNotOperator, UnaryMinusOperator, UnaryPlusOperator]
 const identifyUnaryOperatorNode = identifyNextNode(UNARY_OPERATOR_IDENTIFIERS)
 
 const identifyUnaryOperator = ({ children, context, ...rest }) => {

@@ -52,8 +52,7 @@ const PathPartVariable = {
       children: node.children
     }),
   is: (value) => value && value.type === NodeTypes.PATH_PART_VARIABLE,
-  parse: (context, tokenList) =>
-    parsePathPartVariableTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parsePathPartVariableTokens({ children: [], context, tokenList }),
   test: (context, tokenList, prevExpression = null) => {
     if (prevExpression) {
       // In this case, it's a CallExpression

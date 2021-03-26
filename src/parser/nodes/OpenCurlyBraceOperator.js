@@ -1,12 +1,6 @@
 import { slice } from 'ramda'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  Operators,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, Operators, ParserTypes, TokenTypes } from '../../constants'
 import createOpenCurlyBraceOperator from '../pipes/createOpenCurlyBraceOperator'
 import { getTokenListPosition } from '../util'
 
@@ -24,14 +18,9 @@ const OpenCurlyBraceOperator = {
       )
     }
     if (nextToken.type !== TokenTypes.OPERATOR_OPEN_CURLY_BRACE) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
-        `Expected operator '${
-          Operators.OPEN_CURLY_BRACE
-        }'. Instead was given '${
+        `Expected operator '${Operators.OPEN_CURLY_BRACE}'. Instead was given '${
           tokenList.get(0).value
         }' at ${lineCount}:${lastLineCharacterCount}`
       )
@@ -40,8 +29,7 @@ const OpenCurlyBraceOperator = {
       tokenList: slice(0, 1, tokenList)
     })
   },
-  test: (context, tokenList) =>
-    tokenList.get(0).type === TokenTypes.OPERATOR_OPEN_CURLY_BRACE,
+  test: (context, tokenList) => tokenList.get(0).type === TokenTypes.OPERATOR_OPEN_CURLY_BRACE,
   type: ParserTypes.OPERATOR
 }
 

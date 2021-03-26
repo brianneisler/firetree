@@ -85,9 +85,7 @@ const AssignmentExpression = {
       tokenList,
       findNextRealTokenIndex(tokenList) + (prevExpression ? 0 : 1)
     )
-    return (
-      operatorToken && operatorToken.type === TokenTypes.OPERATOR_ASSIGNMENT
-    )
+    return operatorToken && operatorToken.type === TokenTypes.OPERATOR_ASSIGNMENT
   },
 
   // NOTE BRN: The first token of a Statement cannot be Whitespace or a Comment

@@ -12,20 +12,14 @@ const parseEntryAndWhitespace = pipe(
   parseWhitespaceAndComments
 )
 
-const parseCommaEntryAndWhitespace = pipe(
-  parseCommaOperator,
-  parseEntryAndWhitespace
-)
+const parseCommaEntryAndWhitespace = pipe(parseCommaOperator, parseEntryAndWhitespace)
 
 const parseEntries = (props) => {
   let { children, context, tokenList } = props
   let entries = []
   let first = true
   let nextToken = tokenList.get(0)
-  while (
-    tokenList.size > 0 &&
-    nextToken.type !== TokenTypes.OPERATOR_CLOSE_CURLY_BRACE
-  ) {
+  while (tokenList.size > 0 && nextToken.type !== TokenTypes.OPERATOR_CLOSE_CURLY_BRACE) {
     let entry
     if (first) {
       first = false

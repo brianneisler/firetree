@@ -6,9 +6,7 @@ import ColonOperator from '../nodes/ColonOperator'
 const expectColonOperator = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!ColonOperator.is(nextChild)) {
-    throw new Error(
-      `Expected operator '${Operators.COLON}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected operator '${Operators.COLON}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

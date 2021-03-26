@@ -6,9 +6,7 @@ import AssignmentOperator from '../nodes/AssignmentOperator'
 const expectAssignmentOperator = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!AssignmentOperator.is(nextChild)) {
-    throw new Error(
-      `Expected operator '${Operators.ASSIGNMENT}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected operator '${Operators.ASSIGNMENT}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

@@ -9,11 +9,7 @@ import parseWord from '../pipes/parseWord'
 
 import Word from './Word'
 
-const parsePathPartWordTokens = pipe(
-  parseDivideOperator,
-  parseWord,
-  createPathPartWord
-)
+const parsePathPartWordTokens = pipe(parseDivideOperator, parseWord, createPathPartWord)
 
 const identifyPathPartWordChildren = pipe(expectDivideOperator, identifyWord)
 
@@ -27,8 +23,7 @@ const PathPartWord = {
       children: node.children
     }),
   is: (value) => value && value.type === NodeTypes.PATH_PART_WORD,
-  parse: (context, tokenList) =>
-    parsePathPartWordTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parsePathPartWordTokens({ children: [], context, tokenList }),
   test: (context, tokenList, prevExpression = null) => {
     if (prevExpression) {
       // In this case, it's a BinaryExpress with a DivideOperator

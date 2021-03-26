@@ -31,23 +31,11 @@ const Expression = {
     value.type === NodeTypes.STATIC_MEMBER_EXPRESSION ||
     value.type === NodeTypes.UNARY_EXPRESSION,
   parse: (context, tokenList, prevExpression = null) => {
-    let expression = parseNextNode(
-      context.Expressions,
-      context,
-      tokenList,
-      prevExpression
-    )
+    let expression = parseNextNode(context.Expressions, context, tokenList, prevExpression)
     let parsedTokenList = generateTokenList(context, { ast: expression })
     let nextTokenList = slice(parsedTokenList.size, tokenList.size, tokenList)
-    while (
-      testNextNode(context.Expressions, context, nextTokenList, expression)
-    ) {
-      expression = parseNextNode(
-        context.Expressions,
-        context,
-        nextTokenList,
-        expression
-      )
+    while (testNextNode(context.Expressions, context, nextTokenList, expression)) {
+      expression = parseNextNode(context.Expressions, context, nextTokenList, expression)
       parsedTokenList = generateTokenList(context, { ast: expression })
       nextTokenList = slice(parsedTokenList.size, tokenList.size, tokenList)
     }

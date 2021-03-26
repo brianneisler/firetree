@@ -28,10 +28,7 @@ describe('integration', () => {
     const context = setupContext({
       logger: console
     })
-    const string = await readFile(
-      pathResolve(__dirname, 'files', 'firestore.rules'),
-      'utf-8'
-    )
+    const string = await readFile(pathResolve(__dirname, 'files', 'firestore.rules'), 'utf-8')
 
     const ast = await parse(context, {
       filePath: pathResolve(__dirname, 'files', 'firestore.rules')

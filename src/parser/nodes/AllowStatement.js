@@ -41,8 +41,7 @@ const AllowStatement = {
       children: node.children
     }),
   is: (value) => value && value.type === NodeTypes.ALLOW_STATEMENT,
-  parse: (context, tokenList) =>
-    parseAllowStatementTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parseAllowStatementTokens({ children: [], context, tokenList }),
   test: (context, tokenList) => {
     const firstToken = tokenList.get(0)
     return firstToken.type === TokenTypes.KEYWORD_ALLOW

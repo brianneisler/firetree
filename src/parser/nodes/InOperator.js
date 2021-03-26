@@ -6,20 +6,14 @@ import { getTokenListPosition } from '../util'
 
 const InOperator = {
   identify: (context, node) => node,
-  is: (value) =>
-    value && value.type === NodeTypes.OPERATOR && value.name === Keywords.IN,
+  is: (value) => value && value.type === NodeTypes.OPERATOR && value.name === Keywords.IN,
   parse: (context, tokenList) => {
     const nextToken = tokenList.get(0)
     if (!nextToken) {
-      throw new Error(
-        `Expected keyword '${Keywords.IN}'. Instead reached the end of the file.`
-      )
+      throw new Error(`Expected keyword '${Keywords.IN}'. Instead reached the end of the file.`)
     }
     if (nextToken.type !== TokenTypes.KEYWORD_IN) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected keyword '${Keywords.IN}'. Instead was given '${
           tokenList.get(0).value

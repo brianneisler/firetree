@@ -14,37 +14,24 @@ const parseArgumentAndWhitespace = pipe(
   parseWhitespaceAndComments
 )
 
-const parseCommaArgumentAndWhitespace = pipe(
-  parseCommaOperator,
-  parseArgumentAndWhitespace
-)
+const parseCommaArgumentAndWhitespace = pipe(parseCommaOperator, parseArgumentAndWhitespace)
 
 const parseCommaSeparatedArgs = (props) => {
   let { children, context, tokenList } = props
   let args = []
   let first = true
   let nextToken = tokenList.get(0)
-  while (
-    tokenList.size > 0 &&
-    nextToken.type !== TokenTypes.OPERATOR_CLOSE_PARENTHESIS
-  ) {
+  while (tokenList.size > 0 && nextToken.type !== TokenTypes.OPERATOR_CLOSE_PARENTHESIS) {
     let argument
     if (first) {
       first = false
-      ;({ argument, children, context, tokenList } = parseArgumentAndWhitespace(
-        {
-          children,
-          context,
-          tokenList
-        }
-      ))
-    } else {
-      ;({
-        argument,
+      ;({ argument, children, context, tokenList } = parseArgumentAndWhitespace({
         children,
         context,
         tokenList
-      } = parseCommaArgumentAndWhitespace({
+      }))
+    } else {
+      ;({ argument, children, context, tokenList } = parseCommaArgumentAndWhitespace({
         children,
         context,
         tokenList

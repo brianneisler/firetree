@@ -63,9 +63,7 @@ const ComputedMemberExpression = {
       tokenList,
       findNextRealTokenIndex(tokenList) + (prevExpression ? 0 : 1)
     )
-    return (
-      operatorToken && operatorToken.type === TokenTypes.OPERATOR_OPEN_BRACKET
-    )
+    return operatorToken && operatorToken.type === TokenTypes.OPERATOR_OPEN_BRACKET
   },
   type: ParserTypes.EXPRESSION
 }

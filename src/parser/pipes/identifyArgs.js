@@ -14,10 +14,7 @@ const identifyArgumentAndWhitespace = pipe(
   skipWhitespaceAndComments
 )
 
-const identifyCommaArgumentAndWhitespace = pipe(
-  expectCommaOperator,
-  identifyArgumentAndWhitespace
-)
+const identifyCommaArgumentAndWhitespace = pipe(expectCommaOperator, identifyArgumentAndWhitespace)
 
 const identifyCommaSeparatedArgs = (props) => {
   let { children, context } = props

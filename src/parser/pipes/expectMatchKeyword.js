@@ -6,9 +6,7 @@ import MatchKeyword from '../nodes/MatchKeyword'
 const expectMatchKeyword = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!MatchKeyword.is(nextChild)) {
-    throw new Error(
-      `Expected keyword '${Keywords.MATCH}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected keyword '${Keywords.MATCH}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

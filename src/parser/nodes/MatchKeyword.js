@@ -6,20 +6,14 @@ import { getTokenListPosition } from '../util'
 
 const MatchKeyword = {
   identify: (context, node) => node,
-  is: (value) =>
-    value && value.type === NodeTypes.KEYWORD && value.name === Keywords.MATCH,
+  is: (value) => value && value.type === NodeTypes.KEYWORD && value.name === Keywords.MATCH,
   parse: (context, tokenList) => {
     const nextToken = tokenList.get(0)
     if (!nextToken) {
-      throw new Error(
-        `Expected keyword '${Keywords.MATCH}'. Instead reached the end of the file.`
-      )
+      throw new Error(`Expected keyword '${Keywords.MATCH}'. Instead reached the end of the file.`)
     }
     if (nextToken.type !== TokenTypes.KEYWORD_MATCH) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected keyword '${Keywords.MATCH}'. Instead was given '${
           tokenList.get(0).value

@@ -9,11 +9,7 @@ import parseNextNode from '../util/parseNextNode'
 const EXPRESSION_STATEMENT_PARSERS = [Expression, Identifier, Literal]
 
 const parseExpression = ({ children, context, tokenList, ...rest }) => {
-  const expression = parseNextNode(
-    EXPRESSION_STATEMENT_PARSERS,
-    context,
-    tokenList
-  )
+  const expression = parseNextNode(EXPRESSION_STATEMENT_PARSERS, context, tokenList)
   const parsedTokenList = generateTokenList(context, { ast: expression })
   return {
     ...rest,

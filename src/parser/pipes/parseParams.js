@@ -14,20 +14,14 @@ const parseParamAndWhitespace = pipe(
   parseWhitespaceAndComments
 )
 
-const parseCommaParamAndWhitespace = pipe(
-  parseCommaOperator,
-  parseParamAndWhitespace
-)
+const parseCommaParamAndWhitespace = pipe(parseCommaOperator, parseParamAndWhitespace)
 
 const parseCommaSeparatedParams = (props) => {
   let { children, context, tokenList } = props
   let params = []
   let first = true
   let nextToken = tokenList.get(0)
-  while (
-    tokenList.size > 0 &&
-    nextToken.type !== TokenTypes.OPERATOR_CLOSE_PARENTHESIS
-  ) {
+  while (tokenList.size > 0 && nextToken.type !== TokenTypes.OPERATOR_CLOSE_PARENTHESIS) {
     let param
     if (first) {
       first = false

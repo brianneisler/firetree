@@ -4,12 +4,7 @@ import { NodeTypes } from '../../constants'
 import Comment from '../nodes/Comment'
 import Whitespace from '../nodes/Whitespace'
 
-const parseWhitespaceAndComments = ({
-  children,
-  context,
-  tokenList,
-  ...rest
-}) => {
+const parseWhitespaceAndComments = ({ children, context, tokenList, ...rest }) => {
   let stop = false
   while (tokenList.size > 0 && !stop) {
     const nextToken = tokenList.get(0)

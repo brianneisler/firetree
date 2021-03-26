@@ -6,9 +6,7 @@ import OpenBracketOperator from '../nodes/OpenBracketOperator'
 const expectOpenBracketOperator = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!OpenBracketOperator.is(nextChild)) {
-    throw new Error(
-      `Expected operator '${Operators.OPEN_BRACKET}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected operator '${Operators.OPEN_BRACKET}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

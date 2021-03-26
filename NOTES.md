@@ -1,5 +1,3 @@
 # NOTES
 
-
 ## RESEARCH
-

@@ -1,8 +1,6 @@
 import { Keywords, TokenTypes } from '../../constants'
 
-const REGEX_KEYWORD_MATCH_TEST = new RegExp(
-  `^${Keywords.MATCH}([^a-zA-Z0-9_]|$)`
-)
+const REGEX_KEYWORD_MATCH_TEST = new RegExp(`^${Keywords.MATCH}([^a-zA-Z0-9_]|$)`)
 
 const KeywordMatch = {
   parse: () => ({

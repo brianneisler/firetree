@@ -13,27 +13,22 @@ import parseNextNode from '../util/parseNextNode'
 const BODY_PARSERS = [Comment, Whitespace, Declaration, Statement]
 const parseBodyNode = parseNextNode(BODY_PARSERS)
 
-const parseBodyUntil = curry(
-  (predicate, { children, context, tokenList, ...rest }) => {
-    let body = []
+const parseBodyUntil = curry((predicate, { children, context, tokenList, ...rest }) => {
+  let body = []
 
-    while (tokenList.size > 0 && predicate({ context, tokenList })) {
-      const node = parseBodyNode(context, tokenList)
-      children = append(node, children)
-      if (
-        node.type !== NodeTypes.WHITESPACE &&
-        node.type !== NodeTypes.COMMENT
-      ) {
-        body = append(node, body)
-      }
-
-      // NOTE BRN: Remove the parsed tokens from tokenList
-      const parsedTokenList = generateTokenList(context, { ast: node })
-      tokenList = slice(parsedTokenList.size, tokenList.size, tokenList)
+  while (tokenList.size > 0 && predicate({ context, tokenList })) {
+    const node = parseBodyNode(context, tokenList)
+    children = append(node, children)
+    if (node.type !== NodeTypes.WHITESPACE && node.type !== NodeTypes.COMMENT) {
+      body = append(node, body)
     }
 
-    return { ...rest, body, children, context, tokenList }
+    // NOTE BRN: Remove the parsed tokens from tokenList
+    const parsedTokenList = generateTokenList(context, { ast: node })
+    tokenList = slice(parsedTokenList.size, tokenList.size, tokenList)
   }
-)
+
+  return { ...rest, body, children, context, tokenList }
+})
 
 export default parseBodyUntil

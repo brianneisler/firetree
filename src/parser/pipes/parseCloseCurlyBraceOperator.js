@@ -3,12 +3,7 @@ import { append, slice } from 'ramda'
 import generateTokenList from '../../generator/generateTokenList'
 import CloseCurlyBraceOperator from '../nodes/CloseCurlyBraceOperator'
 
-const parseCloseCurlyBraceOperator = ({
-  children,
-  context,
-  tokenList,
-  ...rest
-}) => {
+const parseCloseCurlyBraceOperator = ({ children, context, tokenList, ...rest }) => {
   const operator = CloseCurlyBraceOperator.parse(context, tokenList)
   const parsedTokenList = generateTokenList(context, { ast: operator })
   return {

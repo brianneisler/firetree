@@ -6,11 +6,7 @@ import UnaryMinusOperator from '../nodes/UnaryMinusOperator'
 import UnaryPlusOperator from '../nodes/UnaryPlusOperator'
 import parseNextNode from '../util/parseNextNode'
 
-const UNARY_OPERATOR_PARSERS = [
-  LogicalNotOperator,
-  UnaryMinusOperator,
-  UnaryPlusOperator
-]
+const UNARY_OPERATOR_PARSERS = [LogicalNotOperator, UnaryMinusOperator, UnaryPlusOperator]
 
 const parseUnaryOperator = ({ children, context, tokenList, ...rest }) => {
   const operator = parseNextNode(UNARY_OPERATOR_PARSERS, context, tokenList)

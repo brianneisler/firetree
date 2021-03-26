@@ -1,21 +1,13 @@
 import { slice } from 'ramda'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  Operators,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, Operators, ParserTypes, TokenTypes } from '../../constants'
 import createInequalityOperator from '../pipes/createInequalityOperator'
 import { getTokenListPosition } from '../util'
 
 const InequalityOperator = {
   identify: (context, node) => node,
   is: (value) =>
-    value &&
-    value.type === NodeTypes.OPERATOR &&
-    value.operatorType === OperatorTypes.INEQUALITY,
+    value && value.type === NodeTypes.OPERATOR && value.operatorType === OperatorTypes.INEQUALITY,
   parse: (context, tokenList) => {
     const nextToken = tokenList.get(0)
     if (!nextToken) {
@@ -24,10 +16,7 @@ const InequalityOperator = {
       )
     }
     if (nextToken.type !== TokenTypes.OPERATOR_INEQUALITY) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected operator '${Operators.INEQUALITY}'. Instead was given '${
           tokenList.get(0).value
@@ -38,8 +27,7 @@ const InequalityOperator = {
       tokenList: slice(0, 1, tokenList)
     })
   },
-  test: (context, tokenList) =>
-    tokenList.get(0).type === TokenTypes.OPERATOR_INEQUALITY,
+  test: (context, tokenList) => tokenList.get(0).type === TokenTypes.OPERATOR_INEQUALITY,
   type: ParserTypes.OPERATOR
 }
 

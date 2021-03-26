@@ -14,8 +14,7 @@ import CloseCurlyBraceOperator from './CloseCurlyBraceOperator'
 const parseBlockStatementTokens = pipe(
   parseOpenCurlyBraceOperator,
   parseBodyUntil(
-    ({ tokenList }) =>
-      tokenList.get(0).type !== TokenTypes.OPERATOR_CLOSE_CURLY_BRACE
+    ({ tokenList }) => tokenList.get(0).type !== TokenTypes.OPERATOR_CLOSE_CURLY_BRACE
   ),
   parseCloseCurlyBraceOperator,
   createBlockStatement
@@ -23,9 +22,7 @@ const parseBlockStatementTokens = pipe(
 
 const identifyBlockStatementChildren = pipe(
   expectOpenCurlyBraceOperator,
-  identifyBodyUntil(({ children }) =>
-    CloseCurlyBraceOperator.is(head(children))
-  ),
+  identifyBodyUntil(({ children }) => CloseCurlyBraceOperator.is(head(children))),
   expectCloseCurlyBraceOperator
 )
 

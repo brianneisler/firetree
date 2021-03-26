@@ -6,9 +6,7 @@ import OpenParenthesisOperator from '../nodes/OpenParenthesisOperator'
 const expectOpenParenthesisOperator = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!OpenParenthesisOperator.is(nextChild)) {
-    throw new Error(
-      `Expected operator '${Operators.OPEN_PARENTHESIS}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected operator '${Operators.OPEN_PARENTHESIS}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

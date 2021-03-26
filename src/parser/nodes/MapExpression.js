@@ -39,20 +39,13 @@ const MapExpression = {
       children: node.children
     }),
   is: (value) => value && value.type === NodeTypes.MAP_EXPRESSION,
-  parse: (context, tokenList) =>
-    parseMapExpressionTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parseMapExpressionTokens({ children: [], context, tokenList }),
   test: (context, tokenList, prevExpression = null) => {
     if (prevExpression) {
       return false
     }
-    const operatorToken = findNextRealToken(
-      tokenList,
-      findNextRealTokenIndex(tokenList)
-    )
-    return (
-      operatorToken &&
-      operatorToken.type === TokenTypes.OPERATOR_OPEN_CURLY_BRACE
-    )
+    const operatorToken = findNextRealToken(tokenList, findNextRealTokenIndex(tokenList))
+    return operatorToken && operatorToken.type === TokenTypes.OPERATOR_OPEN_CURLY_BRACE
   },
   type: ParserTypes.EXPRESSION
 }

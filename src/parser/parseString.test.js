@@ -473,9 +473,7 @@ describe('parseString', () => {
   test('throws when missing identifier for LetDeclaration', async () => {
     const code = 'let = true;'
     const context = setupContext({ logger: console })
-    expect(parseString(context, code)).rejects.toEqual(
-      new Error('Expected Identifier')
-    )
+    expect(parseString(context, code)).rejects.toEqual(new Error('Expected Identifier'))
   })
 
   test('parses an empty ListExpression "[];"', async () => {

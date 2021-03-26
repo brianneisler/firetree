@@ -6,9 +6,7 @@ import ServiceKeyword from '../nodes/ServiceKeyword'
 const expectServiceKeyword = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!ServiceKeyword.is(nextChild)) {
-    throw new Error(
-      `Expected keyword '${Keywords.SERVICE}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected keyword '${Keywords.SERVICE}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

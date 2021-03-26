@@ -6,9 +6,7 @@ import IfKeyword from '../nodes/IfKeyword'
 const expectIfKeyword = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!IfKeyword.is(nextChild)) {
-    throw new Error(
-      `Expected keyword '${Keywords.IF}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected keyword '${Keywords.IF}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

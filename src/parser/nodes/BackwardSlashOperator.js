@@ -1,12 +1,6 @@
 import { slice } from 'ramda'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  Operators,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, Operators, ParserTypes, TokenTypes } from '../../constants'
 import createBackwardSlashOperator from '../pipes/createBackwardSlashOperator'
 import { getTokenListPosition } from '../util'
 
@@ -24,10 +18,7 @@ const BackwardSlashOperator = {
       )
     }
     if (nextToken.type !== TokenTypes.OPERATOR_BACKWARD_SLASH) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected operator '${Operators.BACKWARD_SLASH}'. Instead was given '${
           tokenList.get(0).value
@@ -38,8 +29,7 @@ const BackwardSlashOperator = {
       tokenList: slice(0, 1, tokenList)
     })
   },
-  test: (context, tokenList) =>
-    tokenList.get(0).type === TokenTypes.OPERATOR_BACKWARD_SLASH,
+  test: (context, tokenList) => tokenList.get(0).type === TokenTypes.OPERATOR_BACKWARD_SLASH,
   type: ParserTypes.OPERATOR
 }
 

@@ -26,8 +26,7 @@ const PathExpression = {
       children: node.children
     }),
   is: (value) => value && value.type === NodeTypes.PATH_EXPRESSION,
-  parse: (context, tokenList) =>
-    parsePathExpressionTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parsePathExpressionTokens({ children: [], context, tokenList }),
   test: (context, tokenList, prevExpression = null) =>
     testNextNode(PATH_PART_PARSERS, context, tokenList, prevExpression),
   type: ParserTypes.EXPRESSION

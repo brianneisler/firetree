@@ -1,12 +1,6 @@
 import { slice } from 'ramda'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  Operators,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, Operators, ParserTypes, TokenTypes } from '../../constants'
 import createQuestionMarkOperator from '../pipes/createQuestionMarkOperator'
 import { getTokenListPosition } from '../util'
 
@@ -24,10 +18,7 @@ const QuestionMarkOperator = {
       )
     }
     if (nextToken.type !== TokenTypes.OPERATOR_QUESTION_MARK) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected operator '${Operators.QUESTION_MARK}'. Instead was given '${
           tokenList.get(0).value
@@ -38,8 +29,7 @@ const QuestionMarkOperator = {
       tokenList: slice(0, 1, tokenList)
     })
   },
-  test: (context, tokenList) =>
-    tokenList.get(0).type === TokenTypes.OPERATOR_QUESTION_MARK,
+  test: (context, tokenList) => tokenList.get(0).type === TokenTypes.OPERATOR_QUESTION_MARK,
   type: ParserTypes.OPERATOR
 }
 

@@ -13,10 +13,7 @@ const Comment = {
       throw new Error('Expected Comment. Instead reached the end of the file.')
     }
     if (nextToken.type !== TokenTypes.COMMENT) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected Comment. Instead was given '${
           tokenList.get(0).value

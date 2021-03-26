@@ -1,4 +1,5 @@
 # firetree 🔥🌲
+
 AST parser and generator for Firebase Firestore and Storage security rules
 
 ## Project Status
@@ -13,19 +14,20 @@ AST parser and generator for Firebase Firestore and Storage security rules
 
 [Full API documentation](docs/API.md) - Learn about each method
 
-
 ## Why?
 
-Firestore security rules lacks an available AST parser.... so I made one. 
+Firestore security rules lacks an available AST parser.... so I made one.
 
 This can come in handy for making additional tools, like IDE plugins, security
 rules analyzers or even a [minifier](https://github.com/brianneisler/firemin)
 
 ## Features
+
 - [x] Parses firestore rules into an AST
 - [x] Generates rules from an AST
 
 ## TODO
+
 - [ ] Support stdin and stdout for the binary commands
 
 ## Install
@@ -59,7 +61,6 @@ const ast = await parse(context, {
 const rulesString = await generate(context, { ast })
 ```
 
-
 ## Using the Binary
 
 You can using the binary directly by installing globally
@@ -80,7 +81,6 @@ path you can use the `-o` option.
 ```sh
 firetree parse -f ./path/to/my-firestore.rules -o ./output/file/my-firestore.ast.rules.json
 ```
-
 
 To generate a rules file from an AST, use the `generate` command
 

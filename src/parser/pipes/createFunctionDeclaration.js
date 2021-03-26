@@ -2,13 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 import { NodeTypes } from '../../constants'
 
-const createFunctionDeclaration = ({
-  body,
-  children,
-  id,
-  identifier,
-  params
-}) => ({
+const createFunctionDeclaration = ({ body, children, id, identifier, params }) => ({
   body,
   children,
   id: id || uuidv4(),

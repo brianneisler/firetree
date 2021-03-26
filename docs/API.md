@@ -42,7 +42,7 @@ children, all Nodes in <code>node</code> will be re-identified.</p>
 
 ### function setupContext()
 
-[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/context/setupContext.js#L74)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
+[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/context/setupContext.js#L59)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
 <p>Sets up the Context object for use by the parser and generator</p>
 
 **Params**

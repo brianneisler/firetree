@@ -6,9 +6,7 @@ import CommaOperator from '../nodes/CommaOperator'
 const expectCommaOperator = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!CommaOperator.is(nextChild)) {
-    throw new Error(
-      `Expected operator '${Operators.COMMA}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected operator '${Operators.COMMA}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

@@ -38,8 +38,7 @@ const Entry = {
       children: node.children
     }),
   is: (value) => value && value.type === NodeTypes.ENTRY,
-  parse: (context, tokenList) =>
-    parseEntryTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parseEntryTokens({ children: [], context, tokenList }),
   test: () => false
 }
 

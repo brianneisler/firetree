@@ -1,11 +1,6 @@
 import { has, pipe } from 'ramda'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, ParserTypes, TokenTypes } from '../../constants'
 import createUnaryExpression from '../pipes/createUnaryExpression'
 import identifyArgument from '../pipes/identifyArgument'
 import identifyOperator from '../pipes/identifyOperator'
