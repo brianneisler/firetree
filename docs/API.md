@@ -1,6 +1,8 @@
 # API
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [ast](#ast)
+  * [function assocNodeChild()](#function-assocnodechild)
 - [context](#context)
   * [function setupContext()](#function-setupcontext)
 - [generator](#generator)
@@ -13,11 +15,34 @@
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 <!-- AUTO-GENERATED-CONTENT:START (METHODS) -->
+## ast
+
+### function assocNodeChild()
+
+[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/ast/assocNodeChild.js#L5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
+<p>Assoc a node child within an AST. After the new <code>child</code> is inserted into the<br />
+children, all Nodes in <code>node</code> will be re-identified.</p>
+
+**Params**
+<p><code>context</code>: <code>Context</code> - The current parser Context</p>
+<p><code>index</code>: <code>Integer</code> - The child index to assoc</p>
+<p><code>child</code>: <code>Node</code> - The new child to place at the given `index`</p>
+<p><code>node</code>: <code>Node</code> - The target Node whose child is being assoc&#39;d</p>
+
+**Returns**
+<br /><p><code>Node</code> - A new copy of the Node with the child assoc&#39;d</p>
+
+**Example**
+```js
+
+```
+<br /><br />
+
 ## context
 
 ### function setupContext()
 
-[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/context/setupContext.js#L74)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
+[source](https://github.com/brianneisler/firetree.git/tree/v0.1.0/src/context/setupContext.js#L59)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
 <p>Sets up the Context object for use by the parser and generator</p>
 
 **Params**

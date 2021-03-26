@@ -13,13 +13,10 @@ const Declaration = {
     return type.identify(context, node, ...rest)
   },
   is: (value) =>
-    value.type === NodeTypes.FUNCTION_DECLARATION ||
-    value.type === NodeTypes.LET_DECLARATION,
-  parse: (context, tokenList) =>
-    parseNextNode(context.Declarations, context, tokenList),
+    value.type === NodeTypes.FUNCTION_DECLARATION || value.type === NodeTypes.LET_DECLARATION,
+  parse: (context, tokenList) => parseNextNode(context.Declarations, context, tokenList),
   // NOTE BRN: The first token of a Declaration cannot be Whitespace or a Comment
-  test: (context, tokenList) =>
-    testNextNode(context.Declarations, context, tokenList)
+  test: (context, tokenList) => testNextNode(context.Declarations, context, tokenList)
 }
 
 export default Declaration

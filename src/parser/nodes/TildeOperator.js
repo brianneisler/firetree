@@ -1,21 +1,13 @@
 import { slice } from 'ramda'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  Operators,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, Operators, ParserTypes, TokenTypes } from '../../constants'
 import createTildeOperator from '../pipes/createTildeOperator'
 import { getTokenListPosition } from '../util'
 
 const TildeOperator = {
   identify: (context, node) => node,
   is: (value) =>
-    value &&
-    value.type === NodeTypes.OPERATOR &&
-    value.operatorType === OperatorTypes.TILDE,
+    value && value.type === NodeTypes.OPERATOR && value.operatorType === OperatorTypes.TILDE,
   parse: (context, tokenList) => {
     const nextToken = tokenList.get(0)
     if (!nextToken) {
@@ -24,10 +16,7 @@ const TildeOperator = {
       )
     }
     if (nextToken.type !== TokenTypes.OPERATOR_TILDE) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected operator '${Operators.TILDE}'. Instead was given '${
           tokenList.get(0).value
@@ -38,8 +27,7 @@ const TildeOperator = {
       tokenList: slice(0, 1, tokenList)
     })
   },
-  test: (context, tokenList) =>
-    tokenList.get(0).type === TokenTypes.OPERATOR_TILDE,
+  test: (context, tokenList) => tokenList.get(0).type === TokenTypes.OPERATOR_TILDE,
   type: ParserTypes.OPERATOR
 }
 

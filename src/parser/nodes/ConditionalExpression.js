@@ -14,11 +14,7 @@ import parseQuestionMarkOperator from '../pipes/parseQuestionMarkOperator'
 import parseTest from '../pipes/parseTest'
 import parseWhitespaceAndComments from '../pipes/parseWhitespaceAndComments'
 import skipWhitespaceAndComments from '../pipes/skipWhitespaceAndComments'
-import {
-  findNextRealToken,
-  findNextRealTokenIndex,
-  testNextNode
-} from '../util'
+import { findNextRealToken, findNextRealTokenIndex, testNextNode } from '../util'
 
 import Identifier from './Identifier'
 import Literal from './Literal'
@@ -77,9 +73,7 @@ const ConditionalExpression = {
       tokenList,
       findNextRealTokenIndex(tokenList) + (prevExpression ? 0 : 1)
     )
-    return (
-      operatorToken && operatorToken.type === TokenTypes.OPERATOR_QUESTION_MARK
-    )
+    return operatorToken && operatorToken.type === TokenTypes.OPERATOR_QUESTION_MARK
   },
   type: ParserTypes.EXPRESSION
 }

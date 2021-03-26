@@ -1,11 +1,6 @@
 import { has, pipe } from 'ramda'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, ParserTypes, TokenTypes } from '../../constants'
 import createBinaryExpression from '../pipes/createBinaryExpression'
 import identifyBinaryOperator from '../pipes/identifyBinaryOperator'
 import identifyLeft from '../pipes/identifyLeft'
@@ -15,16 +10,13 @@ import parseLeft from '../pipes/parseLeft'
 import parseRight from '../pipes/parseRight'
 import parseWhitespaceAndComments from '../pipes/parseWhitespaceAndComments'
 import skipWhitespaceAndComments from '../pipes/skipWhitespaceAndComments'
-import {
-  findNextRealToken,
-  findNextRealTokenIndex,
-  testNextNode
-} from '../util'
+import { findNextRealToken, findNextRealTokenIndex, testNextNode } from '../util'
 
 import Identifier from './Identifier'
 import Literal from './Literal'
 
 const BINARY_OPERATOR_TOKEN_TYPES = {
+  [TokenTypes.KEYWORD_IN]: OperatorTypes.IN,
   [TokenTypes.KEYWORD_IS]: OperatorTypes.IS,
   [TokenTypes.OPERATOR_DIVIDE]: OperatorTypes.DIVIDE,
   [TokenTypes.OPERATOR_EQUALITY]: OperatorTypes.EQUALITY,

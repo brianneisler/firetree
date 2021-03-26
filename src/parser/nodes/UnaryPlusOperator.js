@@ -1,21 +1,13 @@
 import { slice } from 'ramda'
 import { v4 as uuidv4 } from 'uuid'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  Operators,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, Operators, ParserTypes, TokenTypes } from '../../constants'
 import { getTokenListPosition } from '../util'
 
 const UnaryPlusOperator = {
   identify: (context, node) => node,
   is: (value) =>
-    value &&
-    value.type === NodeTypes.OPERATOR &&
-    value.operatorType === OperatorTypes.UNARY_PLUS,
+    value && value.type === NodeTypes.OPERATOR && value.operatorType === OperatorTypes.UNARY_PLUS,
   parse: (context, tokenList) => {
     const nextToken = tokenList.get(0)
     if (!nextToken) {
@@ -24,10 +16,7 @@ const UnaryPlusOperator = {
       )
     }
     if (nextToken.type !== TokenTypes.OPERATOR_UNARY_PLUS) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected operator '${Operators.UNARY_PLUS}'. Instead was given '${
           tokenList.get(0).value
@@ -42,8 +31,7 @@ const UnaryPlusOperator = {
       value: nextToken.value
     }
   },
-  test: (context, tokenList) =>
-    tokenList.get(0).type === TokenTypes.OPERATOR_UNARY_PLUS,
+  test: (context, tokenList) => tokenList.get(0).type === TokenTypes.OPERATOR_UNARY_PLUS,
   type: ParserTypes.OPERATOR
 }
 

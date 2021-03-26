@@ -17,9 +17,7 @@ const Literal = {
       type: NodeTypes.LITERAL,
       value:
         identifier.type === TokenTypes.BYTES
-          ? Buffer.from(
-              eval(identifier.value.substring(1, identifier.value.length))
-            )
+          ? Buffer.from(eval(identifier.value.substring(1, identifier.value.length)))
           : eval(identifier.value)
     }
   },

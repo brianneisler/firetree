@@ -6,9 +6,7 @@ import QuestionMarkOperator from '../nodes/QuestionMarkOperator'
 const expectQuestionMarkOperator = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!QuestionMarkOperator.is(nextChild)) {
-    throw new Error(
-      `Expected operator '${Operators.OPEN_PARENTHESIS}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected operator '${Operators.OPEN_PARENTHESIS}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

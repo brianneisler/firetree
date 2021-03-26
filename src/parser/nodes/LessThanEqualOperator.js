@@ -1,12 +1,6 @@
 import { slice } from 'ramda'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  Operators,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, Operators, ParserTypes, TokenTypes } from '../../constants'
 import createLessThanEqualOperator from '../pipes/createLessThanEqualOperator'
 import { getTokenListPosition } from '../util'
 
@@ -24,10 +18,7 @@ const LessThanEqualOperator = {
       )
     }
     if (nextToken.type !== TokenTypes.OPERATOR_LESS_THAN_EQUAL) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected operator '${Operators.LESS_THAN_EQUAL}'. Instead was given '${
           tokenList.get(0).value
@@ -38,8 +29,7 @@ const LessThanEqualOperator = {
       tokenList: slice(0, 1, tokenList)
     })
   },
-  test: (context, tokenList) =>
-    tokenList.get(0).type === TokenTypes.OPERATOR_LESS_THAN_EQUAL,
+  test: (context, tokenList) => tokenList.get(0).type === TokenTypes.OPERATOR_LESS_THAN_EQUAL,
   type: ParserTypes.OPERATOR
 }
 

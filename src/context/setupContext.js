@@ -30,26 +30,11 @@ const NamedNodes = map((name) => {
   return Node
 }, keys(Nodes))
 
-const Declarations = filter(
-  (parser) => parser.type === ParserTypes.DECLARATION,
-  values(NamedNodes)
-)
-const Expressions = filter(
-  (parser) => parser.type === ParserTypes.EXPRESSION,
-  values(NamedNodes)
-)
-const Keywords = filter(
-  (parser) => parser.type === ParserTypes.KEYWORD,
-  values(NamedNodes)
-)
-const Operators = filter(
-  (parser) => parser.type === ParserTypes.OPERATOR,
-  values(NamedNodes)
-)
-const Statements = filter(
-  (parser) => parser.type === ParserTypes.STATEMENT,
-  values(NamedNodes)
-)
+const Declarations = filter((parser) => parser.type === ParserTypes.DECLARATION, values(NamedNodes))
+const Expressions = filter((parser) => parser.type === ParserTypes.EXPRESSION, values(NamedNodes))
+const Keywords = filter((parser) => parser.type === ParserTypes.KEYWORD, values(NamedNodes))
+const Operators = filter((parser) => parser.type === ParserTypes.OPERATOR, values(NamedNodes))
+const Statements = filter((parser) => parser.type === ParserTypes.STATEMENT, values(NamedNodes))
 
 const Identifiers = [
   Program,

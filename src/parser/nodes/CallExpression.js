@@ -17,11 +17,7 @@ const parseCallExpressionTokens = pipe(
   createCallExpression
 )
 
-const identifyCallExpressionChildren = pipe(
-  identifyCallee,
-  skipWhitespaceAndComments,
-  identifyArgs
-)
+const identifyCallExpressionChildren = pipe(identifyCallee, skipWhitespaceAndComments, identifyArgs)
 
 const CallExpression = {
   identify: (context, node) =>
@@ -52,10 +48,7 @@ const CallExpression = {
       tokenList,
       findNextRealTokenIndex(tokenList) + (prevExpression ? 0 : 1)
     )
-    return (
-      operatorToken &&
-      operatorToken.type === TokenTypes.OPERATOR_OPEN_PARENTHESIS
-    )
+    return operatorToken && operatorToken.type === TokenTypes.OPERATOR_OPEN_PARENTHESIS
   },
   type: ParserTypes.EXPRESSION
 }

@@ -12,10 +12,7 @@ const identifyEntryAndWhitespace = pipe(
   skipWhitespaceAndComments
 )
 
-const identifyCommaEntryAndWhitespace = pipe(
-  expectCommaOperator,
-  identifyEntryAndWhitespace
-)
+const identifyCommaEntryAndWhitespace = pipe(expectCommaOperator, identifyEntryAndWhitespace)
 
 const identifyEntries = (props) => {
   let { children, context } = props

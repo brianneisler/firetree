@@ -6,9 +6,7 @@ import SemicolonOperator from '../nodes/SemicolonOperator'
 const expectSemicolonOperator = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!SemicolonOperator.is(nextChild)) {
-    throw new Error(
-      `Expected operator '${Operators.SEMICOLON}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected operator '${Operators.SEMICOLON}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

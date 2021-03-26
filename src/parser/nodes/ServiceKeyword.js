@@ -6,10 +6,7 @@ import { getTokenListPosition } from '../util'
 
 const ServiceKeyword = {
   identify: (context, node) => node,
-  is: (value) =>
-    value &&
-    value.type === NodeTypes.KEYWORD &&
-    value.name === Keywords.SERVICE,
+  is: (value) => value && value.type === NodeTypes.KEYWORD && value.name === Keywords.SERVICE,
   parse: (context, tokenList) => {
     const nextToken = tokenList.get(0)
     if (!nextToken) {
@@ -18,10 +15,7 @@ const ServiceKeyword = {
       )
     }
     if (nextToken.type !== TokenTypes.KEYWORD_SERVICE) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected keyword '${Keywords.SERVICE}'. Instead was given '${
           tokenList.get(0).value

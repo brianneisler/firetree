@@ -9,9 +9,7 @@ const Whitespace = {
   parse: (context, tokenList) => {
     const nextToken = tokenList.get(0)
     if (!nextToken) {
-      throw new Error(
-        `Expected whitespace . Instead reached the end of the file.`
-      )
+      throw new Error(`Expected whitespace . Instead reached the end of the file.`)
     }
     return createWhitespace({
       tokenList: slice(0, 1, tokenList)

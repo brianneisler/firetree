@@ -35,8 +35,7 @@ const IfStatement = {
       children: node.children
     }),
   is: (value) => value.type === NodeTypes.IF_STATEMENT,
-  parse: (context, tokenList) =>
-    parseIfStatementTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parseIfStatementTokens({ children: [], context, tokenList }),
   test: (context, tokenList) => {
     const firstToken = tokenList.get(0)
     return firstToken.type === TokenTypes.KEYWORD_IF

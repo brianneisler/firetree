@@ -5,11 +5,7 @@ import PathPartVariable from '../nodes/PathPartVariable'
 import PathPartWord from '../nodes/PathPartWord'
 import { identifyNextNode, isNextNode } from '../util'
 
-const PATH_PART_IDENTIFIERS = [
-  PathPartExpression,
-  PathPartVariable,
-  PathPartWord
-]
+const PATH_PART_IDENTIFIERS = [PathPartExpression, PathPartVariable, PathPartWord]
 const identifyPathPartNode = identifyNextNode(PATH_PART_IDENTIFIERS)
 
 const identifyPathPart = ({ children, context, ...rest }) => {

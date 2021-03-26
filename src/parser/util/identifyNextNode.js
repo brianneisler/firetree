@@ -8,14 +8,10 @@ const identifyNextNode = curry((identifiers, context, node, ...rest) => {
   }
   const nodeIdentifier = findIdentifier(identifiers, node)
   if (!nodeIdentifier) {
-    throw new Error(
-      `Could not identify node '${JSON.stringify(node, null, 2)}'`
-    )
+    throw new Error(`Could not identify node '${JSON.stringify(node, null, 2)}'`)
   }
   if (!nodeIdentifier.identify) {
-    throw new Error(
-      `${nodeIdentifier.name} identifier does not implement the 'identify' method.`
-    )
+    throw new Error(`${nodeIdentifier.name} identifier does not implement the 'identify' method.`)
   }
   return nodeIdentifier.identify(context, node, ...rest)
 })

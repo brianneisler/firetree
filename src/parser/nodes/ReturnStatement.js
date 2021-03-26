@@ -36,8 +36,7 @@ const ReturnStatement = {
     })
   },
   is: (value) => value.type === NodeTypes.RETURN_STATEMENT,
-  parse: (context, tokenList) =>
-    parseReturnStatementTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parseReturnStatementTokens({ children: [], context, tokenList }),
   test: (context, tokenList) => {
     const firstToken = tokenList.get(0)
     return firstToken.type === TokenTypes.KEYWORD_RETURN

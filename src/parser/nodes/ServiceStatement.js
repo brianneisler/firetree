@@ -35,8 +35,7 @@ const ServiceStatement = {
       children: node.children
     }),
   is: (value) => value && value.type === NodeTypes.SERVICE_STATEMENT,
-  parse: (context, tokenList) =>
-    parseServiceStatementTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parseServiceStatementTokens({ children: [], context, tokenList }),
   test: (context, tokenList) => {
     const firstToken = tokenList.get(0)
     return firstToken.type === TokenTypes.KEYWORD_SERVICE

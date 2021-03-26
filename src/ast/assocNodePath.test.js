@@ -21,8 +21,6 @@ describe('assocNodePath', () => {
       tokenList: await tokenize(context, { string: 'bar' })
     })
 
-    expect(
-      assocNodePath(context, path, child.identifier, node.identifier)
-    ).toBe(child.identifier)
+    expect(assocNodePath(context, path, child.identifier, node.identifier)).toBe(child.identifier)
   })
 })

@@ -1,8 +1,6 @@
 import { Keywords, TokenTypes } from '../../constants'
 
-const REGEX_KEYWORD_SERVICE_TEST = new RegExp(
-  `^${Keywords.SERVICE}([^a-zA-Z0-9_]|$)`
-)
+const REGEX_KEYWORD_SERVICE_TEST = new RegExp(`^${Keywords.SERVICE}([^a-zA-Z0-9_]|$)`)
 
 const KeywordService = {
   parse: () => ({

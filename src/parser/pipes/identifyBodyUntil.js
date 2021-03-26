@@ -19,10 +19,7 @@ const identifyBodyUntil = curry((predicate, { children, context, ...rest }) => {
     const nextChild = head(children)
     // const node = identifyBodyNode(context, nextChild)
     children = tail(children)
-    if (
-      nextChild.type !== NodeTypes.WHITESPACE &&
-      nextChild.type !== NodeTypes.COMMENT
-    ) {
+    if (nextChild.type !== NodeTypes.WHITESPACE && nextChild.type !== NodeTypes.COMMENT) {
       body = append(nextChild, body)
     }
   }

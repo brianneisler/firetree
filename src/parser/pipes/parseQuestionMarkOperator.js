@@ -3,12 +3,7 @@ import { append, slice } from 'ramda'
 import generateTokenList from '../../generator/generateTokenList'
 import QuestionMarkOperator from '../nodes/QuestionMarkOperator'
 
-const parseQuestionMarkOperator = ({
-  children,
-  context,
-  tokenList,
-  ...rest
-}) => {
+const parseQuestionMarkOperator = ({ children, context, tokenList, ...rest }) => {
   const operator = QuestionMarkOperator.parse(context, tokenList)
   const parsedTokenList = generateTokenList(context, { ast: operator })
   return {

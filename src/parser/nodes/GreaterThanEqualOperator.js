@@ -1,12 +1,6 @@
 import { slice } from 'ramda'
 
-import {
-  NodeTypes,
-  OperatorTypes,
-  Operators,
-  ParserTypes,
-  TokenTypes
-} from '../../constants'
+import { NodeTypes, OperatorTypes, Operators, ParserTypes, TokenTypes } from '../../constants'
 import createGreaterThanEqualOperator from '../pipes/createGreaterThanEqualOperator'
 import { getTokenListPosition } from '../util'
 
@@ -24,14 +18,9 @@ const GreaterThanEqualOperator = {
       )
     }
     if (nextToken.type !== TokenTypes.OPERATOR_GREATER_THAN_EQUAL) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
-        `Expected operator '${
-          Operators.GREATER_THAN_EQUAL
-        }'. Instead was given '${
+        `Expected operator '${Operators.GREATER_THAN_EQUAL}'. Instead was given '${
           tokenList.get(0).value
         }' at ${lineCount}:${lastLineCharacterCount}`
       )
@@ -40,8 +29,7 @@ const GreaterThanEqualOperator = {
       tokenList: slice(0, 1, tokenList)
     })
   },
-  test: (context, tokenList) =>
-    tokenList.get(0).type === TokenTypes.OPERATOR_GREATER_THAN_EQUAL,
+  test: (context, tokenList) => tokenList.get(0).type === TokenTypes.OPERATOR_GREATER_THAN_EQUAL,
   type: ParserTypes.OPERATOR
 }
 

@@ -31,9 +31,7 @@ const findWalkee = (node, path, predicate, recur) => {
 }
 
 const findNodePathInTree = curry(
-  measure('findNodePathInTree', (predicate, tree) =>
-    walk(findWalkee, tree, [], predicate)
-  )
+  measure('findNodePathInTree', (predicate, tree) => walk(findWalkee, tree, [], predicate))
 )
 
 export default findNodePathInTree

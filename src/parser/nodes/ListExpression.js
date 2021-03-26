@@ -39,20 +39,14 @@ const ListExpression = {
       children: node.children
     }),
   is: (value) => value && value.type === NodeTypes.LIST_EXPRESSION,
-  parse: (context, tokenList) =>
-    parseListExpressionTokens({ children: [], context, tokenList }),
+  parse: (context, tokenList) => parseListExpressionTokens({ children: [], context, tokenList }),
   test: (context, tokenList, prevExpression = null) => {
     if (prevExpression) {
       // In this case, it's a ComputedMemberExpression
       return false
     }
-    const operatorToken = findNextRealToken(
-      tokenList,
-      findNextRealTokenIndex(tokenList)
-    )
-    return (
-      operatorToken && operatorToken.type === TokenTypes.OPERATOR_OPEN_BRACKET
-    )
+    const operatorToken = findNextRealToken(tokenList, findNextRealTokenIndex(tokenList))
+    return operatorToken && operatorToken.type === TokenTypes.OPERATOR_OPEN_BRACKET
   },
   type: ParserTypes.EXPRESSION
 }

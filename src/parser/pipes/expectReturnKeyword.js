@@ -6,9 +6,7 @@ import ReturnKeyword from '../nodes/ReturnKeyword'
 const expectReturnKeyword = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!ReturnKeyword.is(nextChild)) {
-    throw new Error(
-      `Expected keyword '${Keywords.RETURN}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected keyword '${Keywords.RETURN}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

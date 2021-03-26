@@ -6,9 +6,7 @@ import LetKeyword from '../nodes/LetKeyword'
 const expectLetKeyword = ({ children, ...rest }) => {
   const nextChild = head(children)
   if (!LetKeyword.is(nextChild)) {
-    throw new Error(
-      `Expected keyword '${Keywords.LET}'. Instead found ${nextChild}`
-    )
+    throw new Error(`Expected keyword '${Keywords.LET}'. Instead found ${nextChild}`)
   }
   return {
     ...rest,

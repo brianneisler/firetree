@@ -46,14 +46,8 @@ const ParenthesesExpression = {
       // In this case, it's a CallExpression
       return false
     }
-    const operatorToken = findNextRealToken(
-      tokenList,
-      findNextRealTokenIndex(tokenList)
-    )
-    return (
-      operatorToken &&
-      operatorToken.type === TokenTypes.OPERATOR_OPEN_PARENTHESIS
-    )
+    const operatorToken = findNextRealToken(tokenList, findNextRealTokenIndex(tokenList))
+    return operatorToken && operatorToken.type === TokenTypes.OPERATOR_OPEN_PARENTHESIS
   },
   type: ParserTypes.EXPRESSION
 }

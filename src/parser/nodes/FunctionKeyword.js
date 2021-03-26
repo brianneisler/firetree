@@ -6,10 +6,7 @@ import { getTokenListPosition } from '../util'
 
 const FunctionKeyword = {
   identify: (context, node) => node,
-  is: (value) =>
-    value &&
-    value.type === NodeTypes.KEYWORD &&
-    value.name === Keywords.FUNCTION,
+  is: (value) => value && value.type === NodeTypes.KEYWORD && value.name === Keywords.FUNCTION,
   parse: (context, tokenList) => {
     const nextToken = tokenList.get(0)
     if (!nextToken) {
@@ -18,10 +15,7 @@ const FunctionKeyword = {
       )
     }
     if (nextToken.type !== TokenTypes.KEYWORD_FUNCTION) {
-      const { lastLineCharacterCount, lineCount } = getTokenListPosition(
-        context,
-        tokenList
-      )
+      const { lastLineCharacterCount, lineCount } = getTokenListPosition(context, tokenList)
       throw new Error(
         `Expected keyword '${Keywords.FUNCTION}'. Instead was given '${
           tokenList.get(0).value
