@@ -25,6 +25,7 @@ import Identifier from './Identifier'
 import Literal from './Literal'
 
 const BINARY_OPERATOR_TOKEN_TYPES = {
+  [TokenTypes.KEYWORD_IN]: OperatorTypes.IN,
   [TokenTypes.KEYWORD_IS]: OperatorTypes.IS,
   [TokenTypes.OPERATOR_DIVIDE]: OperatorTypes.DIVIDE,
   [TokenTypes.OPERATOR_EQUALITY]: OperatorTypes.EQUALITY,

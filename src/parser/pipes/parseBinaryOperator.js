@@ -5,6 +5,7 @@ import DivideOperator from '../nodes/DivideOperator'
 import EqualityOperator from '../nodes/EqualityOperator'
 import GreaterThanEqualOperator from '../nodes/GreaterThanEqualOperator'
 import GreaterThanOperator from '../nodes/GreaterThanOperator'
+import InOperator from '../nodes/InOperator'
 import InequalityOperator from '../nodes/InequalityOperator'
 import IsOperator from '../nodes/IsOperator'
 import LessThanEqualOperator from '../nodes/LessThanEqualOperator'
@@ -23,6 +24,7 @@ const BINARY_OPERATOR_PARSERS = [
   GreaterThanEqualOperator,
   GreaterThanOperator,
   InequalityOperator,
+  InOperator,
   IsOperator,
   LessThanEqualOperator,
   LessThanOperator,

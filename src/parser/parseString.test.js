@@ -330,6 +330,20 @@ describe('parseString', () => {
     expect(generateString(context, { ast })).toEqual(code)
   })
 
+  test('parses a simple BinaryExpression "a in b"', async () => {
+    const code = 'a in b;'
+    const context = setupContext({ logger: console })
+    const ast = await parseString(context, code)
+    expect(generateString(context, { ast })).toEqual(code)
+  })
+
+  test('parses a simple BinaryExpression "a in ["owner", "employee"]"', async () => {
+    const code = 'a in ["owner", "employee"];'
+    const context = setupContext({ logger: console })
+    const ast = await parseString(context, code)
+    expect(generateString(context, { ast })).toEqual(code)
+  })
+
   test('parses a simple CallExpression "foo()"', async () => {
     const code = 'foo();'
     const context = setupContext({ logger: console })
