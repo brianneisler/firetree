@@ -1,1 +1,1 @@
-export * from '../../dist/parser/nodes'
+module.exports = require('../../dist/parser/nodes')

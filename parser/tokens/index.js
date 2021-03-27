@@ -1,1 +1,1 @@
-export * from '../../dist/parser/tokens'
+module.exports = require('../../dist/parser/tokens')

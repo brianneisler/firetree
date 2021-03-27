@@ -1,1 +1,1 @@
-export * from '../../dist/parser/pipes'
+module.exports = require('../../dist/parser/pipes')
