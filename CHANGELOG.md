@@ -7,3 +7,8 @@
 - Update TODO
 - Update build badge
 - Update package lock
+
+## Release v0.1.2
+
+- Update docs
+- Fix importable subfolders
