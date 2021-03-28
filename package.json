@@ -1,6 +1,6 @@
 {
   "name": "firetree",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "AST parser and generator for Firebase Firestore and Storage security rules",
   "author": "Brian Neisler <hello@brianneisler.com>",
   "license": "Apache-2.0",
