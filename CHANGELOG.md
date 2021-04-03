@@ -12,3 +12,9 @@
 
 - Update docs
 - Fix importable subfolders
+
+## Release v0.1.3
+
+- Update docs
+- Fix export definitions in package.json. Add vscode settings. Add export folders for path based import.
+- Add .opensource folder
