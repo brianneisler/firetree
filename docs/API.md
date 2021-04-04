@@ -1,33 +1,29 @@
 # API
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
-
 - [ast](#ast)
-  - [function assocNodeChild()](#function-assocnodechild)
+  * [function assocNodeChild()](#function-assocnodechild)
 - [context](#context)
-  - [function setupContext()](#function-setupcontext)
+  * [function setupContext()](#function-setupcontext)
 - [generator](#generator)
-  - [function generate()](#function-generate)
+  * [function generate()](#function-generate)
 - [parser](#parser)
-  - [function parse()](#function-parse)
+  * [function parse()](#function-parse)
 - [lang.util](#langutil)
-  - [**private** function cacheChain()](#private-function-cachechain)
-  - [**private** function functionDefineLength()](#private-function-functiondefinelength)
-  <!-- AUTO-GENERATED-CONTENT:END -->
+  * [**private** function cacheChain()](#private-function-cachechain)
+  * [**private** function functionDefineLength()](#private-function-functiondefinelength)
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 <!-- AUTO-GENERATED-CONTENT:START (METHODS) -->
-
 ## ast
 
 ### function assocNodeChild()
 
 [source](https://github.com/brianneisler/firetree.git/tree/v0.1.3/src/ast/assocNodeChild.js#L5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
-
 <p>Assoc a node child within an AST. After the new <code>child</code> is inserted into the<br />
 children, all Nodes in <code>node</code> will be re-identified.</p>
 
 **Params**
-
 <p><code>context</code>: <code>Context</code> - The current parser Context</p>
 <p><code>index</code>: <code>Integer</code> - The child index to assoc</p>
 <p><code>child</code>: <code>Node</code> - The new child to place at the given `index`</p>
@@ -37,11 +33,9 @@ children, all Nodes in <code>node</code> will be re-identified.</p>
 <br /><p><code>Node</code> - A new copy of the Node with the child assoc&#39;d</p>
 
 **Example**
-
 ```js
 
 ```
-
 <br /><br />
 
 ## context
@@ -49,7 +43,6 @@ children, all Nodes in <code>node</code> will be re-identified.</p>
 ### function setupContext()
 
 [source](https://github.com/brianneisler/firetree.git/tree/v0.1.3/src/context/setupContext.js#L59)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
-
 <p>Sets up the Context object for use by the parser and generator</p>
 
 **Params**
@@ -59,11 +52,9 @@ None
 <br /><p><code>Context</code> - </p>
 
 **Example**
-
 ```js
 const contxt = setupContext()
 ```
-
 <br /><br />
 
 ## generator
@@ -71,13 +62,11 @@ const contxt = setupContext()
 ### function generate()
 
 [source](https://github.com/brianneisler/firetree.git/tree/v0.1.3/src/generator/generate.js#L4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
-
 <p>Generates a rules file from the given <code>ast</code> or <code>tokenList</code> and outputs the<br />
 rules to the given <code>outpitFilePath</code>. If no <code>outputFilePath</code> is given, a<br />
 string is returned.</p>
 
 **Params**
-
 <p><code>context</code>: <code>Context</code> - </p>
 <p><code>options</code>: <code>{<br />
   ast: AST,<br />
@@ -89,7 +78,6 @@ string is returned.</p>
 <br /><p><code>String</code> - </p>
 
 **Example**
-
 ```js
 import { generate, parse, setupContext } from 'firetree'
 
@@ -106,7 +94,6 @@ const ast = await generate(context, {
   outputFilePath: 'path/to/firestore.rules'
 })
 ```
-
 <br /><br />
 
 ## parser
@@ -114,11 +101,9 @@ const ast = await generate(context, {
 ### function parse()
 
 [source](https://github.com/brianneisler/firetree.git/tree/v0.1.3/src/parser/parse.js#L4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
-
 <p>parses the rules file at the given <code>filePath</code> or parse the given <code>string</code>.</p>
 
 **Params**
-
 <p><code>context</code>: <code>Context</code> - </p>
 <p><code>options</code>: <code>{<br />
   filePath: String,<br />
@@ -129,7 +114,6 @@ const ast = await generate(context, {
 <br /><p><code>AST</code> - </p>
 
 **Example**
-
 ```js
 import { parse, setupContext } from 'firetree'
 
@@ -145,7 +129,6 @@ const ast = await parse(context, {
   string: someRulesString
 })
 ```
-
 <br /><br />
 
 ## lang.util
@@ -153,7 +136,6 @@ const ast = await parse(context, {
 ### **private** function cacheChain()
 
 [source](https://github.com/brianneisler/firetree.git/tree/v0.1.3/src/utils/cacheChain.js#L42)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
-
 <p>This method generates a specific object instance for use in a WeakMap cache.<br />
 The object instance is unique based upon the parameters that are passed to<br />
 the this method.</p>
@@ -164,29 +146,24 @@ WeakMap as part of a chain. If that object is ever removed from memory all<br />
 cache chains connected to the object will automatically be removed from the cache.</p>
 
 **Params**
-
 <p><code>args</code>: <code>...&ast;</code> - The arguments to generate a cache key for</p>
 
 **Returns**
 <br /><p><code>Object</code> - The cache key</p>
 
 **Example**
-
 ```js
 
 ```
-
 <br /><br />
 
 ### **private** function functionDefineLength()
 
 [source](https://github.com/brianneisler/firetree.git/tree/v0.1.3/src/utils/functionDefineLength.js#L55)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; since v0.1.0
-
 <p>Defines <code>length</code> for the given <code>func</code></p>
 <p>Note: This mutates <code>func</code></p>
 
 **Params**
-
 <p><code>func</code>: <code>Function</code> - The function to define the length of.</p>
 <p><code>length</code>: <code>Number</code> - The length of the function parameters.</p>
 
@@ -194,13 +171,12 @@ cache chains connected to the object will automatically be removed from the cach
 <br /><p><code>Function</code> - The `func` function.</p>
 
 **Example**
-
 ```js
-const result = functionDefineLength(function (abc) {}, 2)
+const result = functionDefineLength(function(abc) {}, 2)
 result.length
 //=> 2
 ```
-
 <br /><br />
+
 
 <!-- AUTO-GENERATED-CONTENT:END -->
