@@ -18,3 +18,8 @@
 - Update docs
 - Fix export definitions in package.json. Add vscode settings. Add export folders for path based import.
 - Add .opensource folder
+
+## Release v0.1.4
+
+- Update docs
+- Add function for filtering nodes from a tree into a flat list
