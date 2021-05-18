@@ -23,3 +23,7 @@
 
 - Update docs
 - Add function for filtering nodes from a tree into a flat list
+
+## Release v0.1.5
+
+- Add support for multiple permissions to AllowStatement
