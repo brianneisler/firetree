@@ -211,6 +211,13 @@ describe('parseString', () => {
     expect(generateString(context, { ast })).toEqual(code)
   })
 
+  test('parses a AllowStatement "allow read, write: if true;"', async () => {
+    const code = 'allow read, write: if true;'
+    const context = setupContext({ logger: console })
+    const ast = await parseString(context, code)
+    expect(generateString(context, { ast })).toEqual(code)
+  })
+
   test('parses a simple AssignmentExpression', async () => {
     const code = 'a = b;'
     const context = setupContext({ logger: console })
@@ -473,7 +480,9 @@ describe('parseString', () => {
   test('throws when missing identifier for LetDeclaration', async () => {
     const code = 'let = true;'
     const context = setupContext({ logger: console })
-    expect(parseString(context, code)).rejects.toEqual(new Error('Expected Identifier'))
+    expect(parseString(context, code)).rejects.toEqual(
+      new Error("Expected Identifier. Instead was given '=' at 1:4")
+    )
   })
 
   test('parses an empty ListExpression "[];"', async () => {

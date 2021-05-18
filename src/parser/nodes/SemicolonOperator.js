@@ -27,7 +27,10 @@ const SemicolonOperator = {
       tokenList: slice(0, 1, tokenList)
     })
   },
-  test: (context, tokenList) => tokenList.get(0).type === TokenTypes.OPERATOR_SEMICOLON,
+  test: (context, tokenList) => {
+    const firstToken = tokenList.get(0)
+    return !!(firstToken && firstToken.type === TokenTypes.OPERATOR_SEMICOLON)
+  },
   type: ParserTypes.OPERATOR
 }
 
